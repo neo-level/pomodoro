@@ -1,5 +1,5 @@
-#include <iostream>
 #include "Pomodoro.h"
+#include "Timer.h"
 
 /*
  * TODO: allow user to start a pomodoro.
@@ -13,8 +13,6 @@
 int main()
 {
 	Pomodoro pomodoro;
-	pomodoro.Start();
-	pomodoro.Stop();
-	pomodoro.Reset();
+	Timer timer;
 	return 0;
 }
