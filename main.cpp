@@ -1,17 +1,13 @@
 #include <iostream>
 
 /*
- * TODO: add include library to handle time.
- * TODO: create a pomodoro class that holds the following:
- * 		- a timer
- * 		- a start function
- * 		- a stop function
- * 		- duration options
- * 		- a duration
- * 		- a streak
- * 		- a counter
- * 		- a reset function
- * 		- rest time option.
+ * TODO: allow user to start a pomodoro.
+ * TODO: allow user to stop a pomodoro.
+ * TODO: allow user to reset a pomodoro.
+ * TODO: allow user to pause a pomodoro.
+ * TODO: allow user to resume a pomodoro.
+ * TODO: allow user to get it's current streak.
+ * TODO: allow user to get it's current pomodoro count.
  * */
 int main()
 {
