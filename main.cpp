@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Pomodoro.h"
 
 /*
  * TODO: allow user to start a pomodoro.
@@ -11,6 +12,9 @@
  * */
 int main()
 {
-	std::cout << "Hello, World!" << std::endl;
+	Pomodoro pomodoro;
+	pomodoro.Start();
+	pomodoro.Stop();
+	pomodoro.Reset();
 	return 0;
 }
