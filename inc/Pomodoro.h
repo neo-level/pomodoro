@@ -1,0 +1,8 @@
+//
+// Created by Frederik Desmet on 22/10/2022.
+//
+
+#ifndef POMODORO_POMODORO_SRC_POMODORO_H
+#define POMODORO_POMODORO_SRC_POMODORO_H
+
+#endif //POMODORO_POMODORO_SRC_POMODORO_H

@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.23)
-project(pomodoro)
+project(inc/pomodoro)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(pomodoro main.cpp)
+include_directories(inc libs/src)
+add_executable(pomodoro main.cpp libs/src/Pomodoro.cpp inc/Pomodoro.h)
