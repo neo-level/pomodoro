@@ -32,7 +32,16 @@ public:
 	[[nodiscard]] unsigned short int GetMaxCounter() const;
 
 	void SetStartTime();
+	[[nodiscard]] std::chrono::steady_clock::time_point GetStartTime() const;
+
 	void SetStopTime();
+	[[nodiscard]] std::chrono::steady_clock::time_point GetStopTime() const;
+
+	void SetPauseTime();
+	[[nodiscard]] std::chrono::minutes GetPauseTime() const;
+
+	void SetDuration();
+	[[nodiscard]] std::chrono::minutes GetDuration() const;
 private:
 	unsigned short int streak{};
 	unsigned short int counter{};
@@ -40,7 +49,9 @@ private:
 
 	std::chrono::minutes shorRest{ 5 };
 	std::chrono::minutes longRest{ 15 };
-	std::chrono::minutes duration{ 25 };
+	std::chrono::minutes duration{};
+	std::chrono::minutes pauseTime{};
+	std::chrono::minutes pomodoro{ 25 };
 
 	std::chrono::steady_clock::time_point startTime{};
 	std::chrono::steady_clock::time_point stopTime{};

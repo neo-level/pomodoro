@@ -17,16 +17,24 @@ void Pomodoro::Stop()
 {
 	std::cout << "Pomodoro ended" << std::endl;
 	SetStopTime();
+
+	if (GetDuration() == pomodoro)
+	{
+		AddCounter();
+		AddStreak();
+	}
 }
 
 void Pomodoro::Pause()
 {
-
+  Stop();
+  pauseTime = stopTime; // TODO: replace with methods.
 }
 
 void Pomodoro::Resume()
 {
-
+  pomodoro = std::chrono::duration_cast<std::chrono::minutes>(pomodoro - GetPauseTime());
+  Start();
 }
 
 void Pomodoro::Reset()
@@ -110,6 +118,36 @@ void Pomodoro::StartLongBreak()
 	Stop();
 	std::cout << "Starting long break" << std::endl;
 	std::this_thread::sleep_for(std::chrono::minutes(longRest));
+}
+
+std::chrono::minutes Pomodoro::GetDuration() const
+{
+	return duration;
+}
+
+void Pomodoro::SetDuration()
+{
+	duration = std::chrono::duration_cast<std::chrono::minutes>(GetStopTime() - GetStartTime());
+}
+
+std::chrono::steady_clock::time_point Pomodoro::GetStartTime() const
+{
+	return startTime;
+}
+
+std::chrono::steady_clock::time_point Pomodoro::GetStopTime() const
+{
+	return stopTime;
+}
+
+void Pomodoro::SetPauseTime()
+{
+  	pauseTime = std::chrono::steady_clock::now();
+}
+
+std::chrono::steady_clock::time_point Pomodoro::GetPauseTime() const
+{
+	return pauseTime;
 }
 
 
