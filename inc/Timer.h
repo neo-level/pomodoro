@@ -18,6 +18,7 @@ public:
 	void Reset();
 	void Pause();
 	void Resume();
+	void Info();
 
 	[[nodiscard]] std::chrono::minutes GetDuration() const;
 	void SetDuration(std::chrono::minutes duration);

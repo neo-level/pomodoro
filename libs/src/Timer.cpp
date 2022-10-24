@@ -2,6 +2,7 @@
 // Created by Frederik Desmet on 22/10/2022.
 //
 
+#include <iostream>
 #include "Timer.h"
 
 Timer::Timer(std::chrono::minutes duration)
@@ -37,6 +38,15 @@ void Timer::Resume()
 	SetDuration(GetDuration() - GetPauseTime());
 	SetStartTime();
 	Start();
+}
+
+void Timer::Info()
+{
+	using namespace std;
+	cout << "Timer started at: " << GetStartTime().time_since_epoch().count() << "\n";
+	cout << "Timer stopped at: " << GetStopTime().time_since_epoch().count() << "\n";
+	cout << "Timer paused at: " << GetPauseTime().count() << "\n";
+	cout << "Timer duration: " << GetDuration().count() << endl;
 }
 
 std::chrono::minutes Timer::GetDuration() const
@@ -78,6 +88,7 @@ void Timer::SetPauseTime()
 {
 	_pauseTime = std::chrono::duration_cast<std::chrono::minutes>(GetStopTime() - GetStartTime());
 }
+
 
 
 
