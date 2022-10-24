@@ -12,6 +12,7 @@ public:
 	~Pomodoro() = default;
 
 	void AddPomodoro();
+	void ShowPomodoroStats() const;
 	void Reset();
 
 	void StartBreak();

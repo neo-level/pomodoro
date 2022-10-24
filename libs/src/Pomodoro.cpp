@@ -7,12 +7,18 @@
 #include <thread>
 #include <iostream>
 
-
 void Pomodoro::AddPomodoro()
 {
 	std::cout << "Pomodoro ended" << std::endl;
 	AddCounter();
 	AddStreak();
+}
+
+void Pomodoro::ShowPomodoroStats() const
+{
+	using namespace std;
+ 	cout << "Current streak: " << GetStreak() << "\n";
+	cout << "Current pomodoro count: " << GetCounter() << endl;
 }
 
 void Pomodoro::Reset()
@@ -79,3 +85,4 @@ void Pomodoro::StartLongBreak()
 	std::cout << "Starting long break" << std::endl;
 	std::this_thread::sleep_for(std::chrono::minutes(longRest));
 }
+
